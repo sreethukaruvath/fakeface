@@ -1,0 +1,47 @@
+{% include 'userheader.html' %}
+
+<div class="imgs" style="height:600px">
+	
+
+<center>
+	
+		<br><br><br><br><br>
+		<div class="top" style="width:700px">
+
+	<h2>View Event</h2>
+	<br><br>
+	<table class="table" style="color: black;width: 700px;">
+		<tr>
+			<th>#</th>
+			<th>Event</th>
+			<th>Place</th>
+			<th>Details</th>
+			
+		</tr>
+		{% for i in data['user'] %}
+		<tr>
+			<td>{{loop.index}}</td>
+			<td>{{i['event']}}</td>
+			<td>{{i['place']}}</td>
+			<td>{{i['details']}}</td>
+		</tr>
+		{% endfor %}
+	</table>
+</center>
+</div></div>
+
+{% include 'footer.html' %}
+
+
+<style type="text/css">
+	.imgs{
+		background: url('static/assets/img/ee.jpg');
+		background-size: cover;
+		background-position: center;
+		background-repeat: no-repeat;
+		height: 300px;
+	}
+	.top{
+		background-color: rgba(255, 255, 255, .8);
+	}
+</style>

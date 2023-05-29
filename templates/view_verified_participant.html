@@ -1,0 +1,45 @@
+{%include 'securityheader.html'%}
+<br><br><br>
+<center>
+	<h1>Profile </h1>
+	<table  class="table card shadow" style="width:450px;padding: 20px 30px;">
+		{%for row in data['user']%}
+		<tr>
+			<td><img style="margin-left: 50px" src="/{{row['image']}}" width="150" height="150"></td>
+		</tr>
+		<tr>
+			
+			<th>NAME :</th>
+			<td>{{row['fname']}} {{row['lname']}}</td>
+		</tr>
+		<tr>
+			<th>PLACE</th>
+			<td>{{row['place']}}</td>
+		</tr>
+		<!-- <tr>
+			<th>PHONE</th>
+			<td>{{row['phone']}}</td>
+		</tr> -->
+		<tr>
+			<th>GENDER</th>
+			<td>{{row['gender']}}</td>
+		</tr>
+		<tr>
+			<th>STATAUS</th>
+			<td>{{row['status']}}</td>
+		</tr>
+		<br><br><br><br>
+		
+			
+			
+		{%endfor%}
+		<tr>
+			 <td colspan="2" align="right"><a href="securityhome" class="btn btn-outline-info">Go Back</a></td>
+
+		</tr>
+	</table>
+	
+</center>
+<br><br><br>
+</div></div></section>
+{%include 'footer.html'%}

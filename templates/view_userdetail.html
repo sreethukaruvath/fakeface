@@ -1,0 +1,53 @@
+{% include 'securityheader.html' %}
+
+<div class="imgs" style="height:100%;margin-bottom: 50px;">
+	<br><br><br><br><br>
+
+<center>
+	<div class="top" style="width:900px">
+	<h2>View User</h2>
+	<table class="table" style="width:700px">
+		<tr>
+			<th>#</th>
+			<th>Image</th>
+			<th>First Name</th>
+			<th>Last Name</th>
+			<th>Place</th>
+			<th>Phone</th>
+			<th>Email</th>
+		</tr>
+		{% for i in data['user'] %}
+		<tr>
+			<td>{{loop.index}}</td>
+			<td><img src="{{i['image']}}" width="150px" height="150px"></td>
+			<td>{{i['fname']}}</td>
+			<td>{{i['lname']}}</td>
+			<td>{{i['place']}}</td>
+			<td>{{i['phone']}}</td>
+			<td>{{i['email']}}</td>
+		</tr>
+		{% endfor %}
+	</table>
+</center>
+</div>
+</div>
+
+
+<style type="text/css">
+	.imgs{
+		background: url('static/assets/img/ee.jpg');
+		background-size: cover;
+		background-position: center;
+		background-repeat: no-repeat;
+		height: 300px;
+	}
+
+
+</style>
+
+
+<style type="text/css">
+	.top{
+		background-color: rgba(255, 255, 255, .8);
+	}
+</style>

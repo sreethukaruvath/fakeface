@@ -1,0 +1,56 @@
+{% include 'userheader.html' %}
+
+<div class="imgs" style="height:700px">
+	
+
+<center>
+	<br><br><br><br><br>
+	<div class="top" style="width:800px">
+	<h2>View Participants</h2>
+	<br><br>
+	<table class="table" style="color:black;width: 800px;">
+		<tr>
+			<th>#</th>
+			<th>Image</th>
+			<th>First Name</th>
+			<th>Last Name</th>
+			<th>Place</th>
+			<th>Event</th>
+			<th>Status</th>
+		</tr>
+		{% for i in data['user'] %}
+		<tr>
+			<td>{{loop.index}}</td>
+			<td><img src="{{i['image']}}" width="150px" height="150px"></td>
+			<td>{{i['fname']}}</td>
+			<td>{{i['lname']}}</td>
+			<td>{{i['place']}}</td>
+			<td>{{i['event']}}</td>
+			{%if i['status']=="pending"%}
+			<td><a href="?action=accept&id={{i['participant_id']}}" class="btn btn-success">Approved</a></td>
+			<td><a href="?action=reject&id={{i['participant_id']}}" class="btn btn-danger">Reject</a></td>
+			{%else%}
+			<td>{{i['status']}}</td>
+			{%endif%}
+			
+		</tr>
+		{% endfor %}
+	</table>
+</center>
+</div></div>
+
+{% include 'footer.html' %}
+
+
+<style type="text/css">
+	.imgs{
+		background: url('static/assets/img/ee.jpg');
+		background-size: cover;
+		background-position: center;
+		background-repeat: no-repeat;
+		height: 300px;
+	}
+	.top{
+		background-color: rgba(255, 255, 255, .8);
+	}
+</style>

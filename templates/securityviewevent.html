@@ -1,0 +1,39 @@
+{% include 'securityheader.html' %}
+
+<div class="imgs">
+	
+</div>
+<center>
+	<h2>View Event</h2>
+	<table class="table">
+		<tr>
+			<th>#</th>
+			<th>Event</th>
+			<th>Place</th>
+			<th>Details</th>
+			
+		</tr>
+		{% for i in data['event'] %}
+		<tr>
+			<td>{{loop.index}}</td>
+			<td>{{i['event']}}</td>
+			<td>{{i['place']}}</td>
+			<td>{{i['details']}}</td>
+		</tr>
+		{% endfor %}
+	</table>
+</center>
+
+
+{% include 'footer.html' %}
+
+
+<style type="text/css">
+	.imgs{
+		background: url('static/assets/img/ee.jpg');
+		background-size: cover;
+		background-position: center;
+		background-repeat: no-repeat;
+		height: 300px;
+	}
+</style>
